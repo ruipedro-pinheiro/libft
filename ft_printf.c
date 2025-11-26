@@ -6,11 +6,11 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 13:15:40 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/21 11:19:08 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:49:46 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 /*
 ** Gère les conversions de format (%%,%c,%s,%p,%d,%i,%u,%x,%X)

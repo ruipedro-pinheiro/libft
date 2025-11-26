@@ -6,11 +6,11 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:43:36 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/14 21:00:02 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:49:59 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 /*
 ** Lit le fichier et accumule les données dans le stash jusqu'à trouver un '\n'
