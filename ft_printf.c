@@ -6,19 +6,19 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 13:15:40 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/26 15:49:46 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:29:41 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Gère les conversions de format (%%,%c,%s,%p,%d,%i,%u,%x,%X)
+** @brief Gère les conversions de format (%%,%c,%s,%p,%d,%i,%u,%x,%X)
 ** @param s: chaîne de format avec '%' à l'index i
 ** @param i: position actuelle sur le '%'
 ** @param varg: liste d'arguments variables
 ** @param count: nombre de caractères déjà imprimés
-** Fonction: Check s[i+1] pour déterminer le type et appelle va_arg()
+** @note Check s[i+1] pour déterminer le type et appelle va_arg()
 ** pour extraire l'argument correspondant puis l'afficher
 */
 int	var_handler(const char *s, int i, va_list varg, int count)
