@@ -1,34 +1,34 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:30:00 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/06 14:30:00 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/12/05 15:21:31 by rpinheir         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 /*
-** @brief Convertit une chaine de caracteres en entier
-** @param str Chaine de caracteres a convertir
-** @return int Valeur entiere de la chaine
-** @details Etapes de conversion:
+** @brief Convertit une chaîne de caractères en entier
+** @param str Chaîne de caractères a convertir
+** @return int Valeur entière de la chaîne
+** @details Étapes de conversion:
 **          1. Skip les whitespaces (espace, tab, newline, etc.)
-**          2. Detecte le signe optionnel (+/-)
+**          2. Détecte le signe optionnel (+/-)
 **          3. Convertit les chiffres jusqu'au premier non-chiffre
 ** @note Whitespaces reconnus: ' ', '\t', '\n', '\v', '\f', '\r' (ASCII 9-13)
-** @warning Ne gere pas l'overflow INT_MAX/INT_MIN - comportement indefini
+** @warning Ne gère pas l'overflow INT_MAX/INT_MIN - comportement indéfini
 ** @see ft_isdigit pour la detection des chiffres
 ** @example ft_atoi("  -42abc") retourne -42
 ** @example ft_atoi("   +123") retourne 123
 */
-int	ft_atoi(const char *str)
+long long	ft_atoll(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	long long	i;
+	long long	sign;
+	long long	result;
 
 	i = 0;
 	sign = 1;
