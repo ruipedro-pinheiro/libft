@@ -12,6 +12,17 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Compare au maximum n caracteres de deux strings
+** @param s1 Premiere string
+** @param s2 Deuxieme string
+** @param n Nombre maximum de caracteres a comparer
+** @return int 0 si egales, difference du premier char different sinon
+** @details Compare jusqu'a '\0' ou n caracteres, le premier atteint
+** @note Retour < 0 si s1 < s2, > 0 si s1 > s2
+** @see ft_memcmp pour comparer des zones memoire de taille fixe
+** @example ft_strncmp("abc", "abd", 2) retourne 0 (compare que "ab")
+*/
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;

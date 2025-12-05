@@ -13,11 +13,13 @@
 #include "libft.h"
 
 /*
-** Lit le fichier et accumule les données dans le stash jusqu'à trouver un '\n'
-** @param fd: file descriptor à lire
-** @param stash: pointeur vers le stash où accumuler les données lues
-** Fonction: Continue de lire BUFFER_SIZE octets à la fois et les ajoute
-** au stash jusqu'à trouver un '\n' ou atteindre EOF
+** @brief Lit le fichier et accumule les donnees dans le stash
+** @param fd File descriptor a lire
+** @param stash Pointeur vers le stash (buffer persistant)
+** @details Lit BUFFER_SIZE octets a la fois, accumule dans stash
+**          jusqu'a trouver un '\n' ou atteindre EOF
+** @note En cas d'erreur, libere tout et met stash a NULL
+** @see get_next_line qui appelle cette fonction
 */
 void	read_to_stash(int fd, char **stash)
 {
@@ -46,11 +48,11 @@ void	read_to_stash(int fd, char **stash)
 }
 
 /*
-** Nettoie le stash en supprimant la ligne qui vient d'être extraite
-** @param stash: le stash à nettoyer
-** Fonction: Après avoir extrait une ligne, on déplace tout ce qui vient
-** APRÈS le '\n' au début du stash, pour garder le reste pour le prochain appel
-** Exemple: si stash = "ligne1\nligne2", après clean -> stash = "ligne2"
+** @brief Nettoie le stash apres extraction d'une ligne
+** @param stash Buffer a nettoyer
+** @details Deplace tout ce qui est apres le '\n' au debut du stash
+** @note Garde le reste des donnees pour le prochain appel
+** @example "ligne1\nligne2" devient "ligne2" apres clean
 */
 void	clean_stash(char *stash)
 {
@@ -68,11 +70,11 @@ void	clean_stash(char *stash)
 }
 
 /*
-** Initialise un stash vide
-** @param stash: paramètre non utilisé (juste pour la signature)
-** @return: un pointeur vers un stash vide (string vide allouée)
-** Fonction: Alloue 1 octet pour créer une string vide "",
-** qui servira de point de départ pour accumuler les lectures
+** @brief Initialise un stash vide
+** @param stash Parametre ignore (pour signature)
+** @return char* Pointeur vers une string vide allouee "", NULL si echec
+** @details Alloue 1 octet pour creer un point de depart vide
+** @note Appele au premier appel de get_next_line
 */
 char	*malloc_stash(char *stash)
 {
@@ -83,6 +85,14 @@ char	*malloc_stash(char *stash)
 	return (stash);
 }
 
+/*
+** @brief Extrait une ligne du stash
+** @param stash Pointeur vers le buffer persistant
+** @param len Position du '\n' (-1 si pas trouve)
+** @return char* Ligne extraite avec '\n', NULL si stash vide ou erreur
+** @details Si len == -1 (pas de '\n'), retourne tout le stash (EOF)
+**          Sinon extrait jusqu'au '\n' inclus et clean le stash
+*/
 char	*extract_line(char **stash, int len)
 {
 	char	*line;
@@ -102,6 +112,17 @@ char	*extract_line(char **stash, int len)
 	return (line);
 }
 
+/*
+** @brief Lit et retourne la prochaine ligne d'un file descriptor
+** @param fd File descriptor a lire (fichier, stdin, etc.)
+** @return char* Ligne lue incluant '\n' (sauf EOF), NULL si fin ou erreur
+** @details Utilise un static stash pour garder les donnees entre appels
+**          Lit BUFFER_SIZE octets a la fois, accumule jusqu'a '\n'
+** @note Chaque appel retourne une nouvelle ligne, a free() apres usage
+** @warning BUFFER_SIZE doit etre > 0 et fd >= 0
+** @see read_to_stash, extract_line, clean_stash (helpers)
+** @example while ((line = get_next_line(fd))) { ... free(line); }
+*/
 char	*get_next_line(int fd)
 {
 	static char	*stash;

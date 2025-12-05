@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+/*
+** @brief Affiche un unsigned int en hexadecimal uppercase
+** @param n Nombre a afficher en hexa
+** @return int Nombre de caracteres affiches
+** @details Recursion: divise par 16, affiche avec base "0123456789ABCDEF"
+** @note Utilisee par ft_printf pour %X
+** @see ft_putnbr_hex_lowercase pour %x (minuscules)
+** @example ft_putnbr_hex_uppercase(255) affiche "FF"
+*/
 int	ft_putnbr_hex_uppercase(unsigned int n)
 {
 	char	*base;

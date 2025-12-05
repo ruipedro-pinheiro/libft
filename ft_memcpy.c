@@ -12,6 +12,18 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Copie n octets d'une zone memoire vers une autre
+** @param dest Zone memoire de destination
+** @param src Zone memoire source
+** @param n Nombre d'octets a copier
+** @return void* Pointeur vers dest
+** @details Copie octet par octet de src vers dest
+** @warning Comportement indefini si les zones se chevauchent!
+** @note Utiliser ft_memmove si overlap possible
+** @see ft_memmove pour copie safe avec overlap
+** @see ft_strcpy pour copier des strings
+*/
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*tmp_dest;

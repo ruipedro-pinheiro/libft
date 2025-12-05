@@ -13,13 +13,15 @@
 #include "libft.h"
 
 /*
-** @brief Gère les conversions de format (%%,%c,%s,%p,%d,%i,%u,%x,%X)
-** @param s: chaîne de format avec '%' à l'index i
-** @param i: position actuelle sur le '%'
-** @param varg: liste d'arguments variables
-** @param count: nombre de caractères déjà imprimés
-** @note Check s[i+1] pour déterminer le type et appelle va_arg()
-** pour extraire l'argument correspondant puis l'afficher
+** @brief Gere les conversions de format (%%,%c,%s,%p,%d,%i,%u,%x,%X)
+** @param s Chaine de format avec '%' a l'index i
+** @param i Position actuelle sur le '%'
+** @param varg Liste d'arguments variables (va_list)
+** @param count Nombre de caracteres deja imprimes
+** @return int Nouveau count avec les caracteres ajoutes
+** @details Lit s[i+1] pour determiner le type de conversion
+** @note Utilise va_arg() pour extraire l'argument correspondant
+** @see ft_printf qui appelle cette fonction
 */
 int	var_handler(const char *s, int i, va_list varg, int count)
 {
@@ -43,12 +45,16 @@ int	var_handler(const char *s, int i, va_list varg, int count)
 }
 
 /*
-** Reproduction de printf avec formats variables (variadic function)
-** @param s: chaîne de format avec spécificateurs %X
-** @param ...: arguments variables correspondant aux %X
-** Fonction: Parse la chaîne, si '%' trouvé appelle var_handler(),
-** sinon affiche le caractère normalement. Retourne le nombre total
-** de caractères imprimés (comme printf original)
+** @brief Reproduction de printf avec formats variables (variadic function)
+** @param s Chaine de format avec specificateurs %X
+** @param ... Arguments variables correspondant aux %X
+** @return int Nombre total de caracteres imprimes
+** @details Parse la chaine, si '%' trouve appelle var_handler(),
+**          sinon affiche le caractere normalement
+** @note Formats supportes: %% %c %s %p %d %i %u %x %X
+** @warning Ne supporte pas les flags de formatage (width, precision, etc.)
+** @see var_handler pour le traitement des conversions
+** @example ft_printf("Hello %s, you are %d", "Pedro", 28);
 */
 int	ft_printf(const char *s, ...)
 {

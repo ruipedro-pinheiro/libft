@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/*
+** @brief Compte le nombre de chiffres d'un entier
+** @param chiffre Entier dont on veut compter les chiffres
+** @return int Nombre de caracteres necessaires (incluant le signe -)
+** @details Pour 0 et negatifs, compte au moins 1 pour le '0' ou le '-'
+** @note Fonction helper pour ft_itoa
+*/
 static int	ft_count(int chiffre)
 {
 	int	count;
@@ -27,6 +34,17 @@ static int	ft_count(int chiffre)
 	return (count);
 }
 
+/*
+** @brief Convertit un entier en chaine de caracteres
+** @param chiffre Entier a convertir
+** @return char* Nouvelle string allouee representant l'entier, NULL si echec
+** @details Utilise un long pour gerer INT_MIN (-2147483648)
+** @note La string retournee doit etre free() par l'appelant
+** @warning Alloue de la memoire - penser a free()
+** @see ft_atoi pour l'operation inverse (string -> int)
+** @example ft_itoa(-42) retourne "-42"
+** @example ft_itoa(0) retourne "0"
+*/
 char	*ft_itoa(int chiffre)
 {
 	int		len;

@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/*
+** @brief Calcule le nombre de chiffres d'un entier
+** @param n Entier a mesurer
+** @return int Nombre de caracteres (incluant le signe -)
+** @details Pour 0 et negatifs, compte au moins 1
+** @note Fonction helper pour ft_putnbr
+*/
 static int	ft_numlen(int n)
 {
 	int	len;
@@ -27,6 +34,15 @@ static int	ft_numlen(int n)
 	return (len);
 }
 
+/*
+** @brief Affiche un entier sur stdout et retourne sa longueur
+** @param n Entier a afficher
+** @return int Nombre de caracteres affiches
+** @details Gere les nombres negatifs et INT_MIN
+** @note Utilisee par ft_printf pour %d et %i
+** @see ft_putnbr_fd version avec file descriptor
+** @see ft_itoa pour convertir en string
+*/
 int	ft_putnbr(int n)
 {
 	int	len;

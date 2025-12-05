@@ -13,6 +13,18 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Alloue et initialise a zero un bloc memoire
+** @param nmemb Nombre d'elements a allouer
+** @param size Taille de chaque element en octets
+** @return void* Pointeur vers la memoire allouee, NULL si echec malloc
+** @details Alloue nmemb * size octets puis initialise tout a zero
+** @note Contrairement a malloc, la memoire est garantie initialisee a 0
+** @warning Ne verifie pas l'overflow de nmemb * size
+** @see ft_bzero utilisee pour l'initialisation
+** @see malloc pour allocation sans initialisation
+** @example int *arr = ft_calloc(10, sizeof(int)); // 10 ints a zero
+*/
 void	*ft_calloc(int nmemb, int size)
 {
 	void	*ptr;

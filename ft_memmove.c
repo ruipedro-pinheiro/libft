@@ -12,6 +12,18 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Copie n octets en gerant le chevauchement des zones
+** @param dest Zone memoire de destination
+** @param src Zone memoire source
+** @param n Nombre d'octets a copier
+** @return void* Pointeur vers dest
+** @details Si dest < src: copie du debut vers la fin (normal)
+**          Si dest > src: copie de la fin vers le debut (evite ecrasement)
+** @note Plus lent que memcpy mais safe pour les overlaps
+** @see ft_memcpy version plus rapide mais unsafe si overlap
+** @example Utile pour decaler des elements dans un tableau
+*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*temp_dest;

@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/*
+** @brief Affiche une valeur en hexadecimal (helper recursif)
+** @param n Valeur unsigned long a convertir et afficher
+** @return int Nombre de caracteres affiches
+** @details Recursion: divise par 16 jusqu'a n < 16, puis affiche
+** @note Utilise la base "0123456789abcdef" (lowercase)
+** @see ft_displayptr qui appelle cette fonction
+*/
 static int	ft_putptr_hex(unsigned long n)
 {
 	char	*base;
@@ -32,6 +40,16 @@ static int	ft_putptr_hex(unsigned long n)
 	return (count);
 }
 
+/*
+** @brief Affiche une adresse memoire au format hexadecimal
+** @param ptr Pointeur dont l'adresse doit etre affichee
+** @return int Nombre de caracteres affiches (incluant "0x" ou "(nil)")
+** @details Format de sortie: "0x" suivi de l'adresse en hexa lowercase
+** @note Si ptr est NULL, affiche "(nil)" et retourne 5
+** @see ft_putptr_hex helper pour la conversion hexa
+** @see ft_printf flag %p utilise cette fonction
+** @example ft_displayptr(&var) affiche "0x7ffd5e8b3a4c"
+*/
 int	ft_displayptr(void *ptr)
 {
 	int				count;

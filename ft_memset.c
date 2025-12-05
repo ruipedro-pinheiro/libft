@@ -12,6 +12,17 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Remplit une zone memoire avec un octet specifique
+** @param s Pointeur vers la zone memoire
+** @param c Octet a ecrire (cast en unsigned char)
+** @param n Nombre d'octets a remplir
+** @return void* Pointeur vers s
+** @details Ecrit l'octet c dans les n premiers octets de s
+** @note Pour initialiser a zero, preferer ft_bzero
+** @see ft_bzero equivalent a ft_memset(s, 0, n)
+** @example ft_memset(buffer, 'A', 10) remplit de 'AAAAAAAAAA'
+*/
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*tmp;

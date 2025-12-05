@@ -13,6 +13,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Concatene deux strings en une nouvelle string allouee
+** @param s1 Premiere string
+** @param s2 Deuxieme string (ajoutee apres s1)
+** @return char* Nouvelle string s1+s2, NULL si echec ou s1/s2 NULL
+** @details Alloue len(s1) + len(s2) + 1 octets
+** @note La string retournee doit etre free() par l'appelant
+** @warning Alloue de la memoire - penser a free()
+** @see ft_split pour l'operation inverse (decoupage)
+** @example ft_strjoin("hello", " world") retourne "hello world"
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;

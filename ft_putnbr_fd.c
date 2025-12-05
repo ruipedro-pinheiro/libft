@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/*
+** @brief Ecrit un entier sur un file descriptor (recursif)
+** @param n Entier a afficher
+** @param fd File descriptor cible
+** @details Gere INT_MIN (-2147483648) en cas special (hardcode)
+**          Sinon: affiche '-' si negatif, puis recursion digit par digit
+** @note Recursion: divise par 10 jusqu'au dernier chiffre, puis remonte
+** @warning INT_MIN doit etre traite separement car -INT_MIN overflow
+** @see ft_putnbr version pour stdout avec retour du count
+*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	num;

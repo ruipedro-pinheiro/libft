@@ -13,6 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Verifie si un caractere appartient a un set
+** @param c Caractere a verifier
+** @param set String contenant les caracteres du set
+** @return int 1 si c est dans set, 0 sinon
+** @note Fonction helper pour ft_strtrim
+*/
 static int	is_in_set(char c, char const *set)
 {
 	while (*set)
@@ -24,6 +31,18 @@ static int	is_in_set(char c, char const *set)
 	return (0);
 }
 
+/*
+** @brief Supprime les caracteres d'un set au debut et a la fin d'une string
+** @param s1 String a trimmer
+** @param set Caracteres a supprimer
+** @return char* Nouvelle string trimmee, NULL si echec
+** @details Supprime depuis le debut jusqu'au premier char hors du set,
+**          puis depuis la fin jusqu'au dernier char hors du set
+** @note La string retournee doit etre free() par l'appelant
+** @warning Alloue de la memoire - penser a free()
+** @example ft_strtrim("  hello  ", " ") retourne "hello"
+** @example ft_strtrim("xxhelloxx", "x") retourne "hello"
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;

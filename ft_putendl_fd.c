@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/*
+** @brief Ecrit une string suivie d'un newline sur un file descriptor
+** @param s String a ecrire
+** @param fd File descriptor cible
+** @details Equivalent a ft_putstr_fd(s, fd) + write(fd, "\n", 1)
+** @note Utile pour afficher des lignes completes
+** @warning Ne verifie pas si s est NULL
+** @see ft_putstr_fd version sans newline
+** @example ft_putendl_fd("Error", 2); // affiche "Error\n" sur stderr
+*/
 void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;

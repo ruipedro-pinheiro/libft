@@ -13,6 +13,19 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Concatene src a dst de maniere securisee (BSD)
+** @param dst Buffer destination (doit contenir une string)
+** @param src String a ajouter
+** @param size Taille totale du buffer dst
+** @return int Longueur totale tentee: len(dst) + len(src)
+** @details Ajoute src a la fin de dst, garantit '\0' final
+**          Si size <= len(dst), retourne size + len(src)
+** @note Retour > size signifie troncation
+** @warning dst doit deja contenir une string valide (avec '\0')
+** @see ft_strlcpy pour copie securisee
+** @example Si retour >= size, la concatenation a ete tronquee
+*/
 int	ft_strlcat(char *dst, const char *src, int size)
 {
 	int	dst_len;

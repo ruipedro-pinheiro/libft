@@ -12,6 +12,17 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Compare deux zones memoire octet par octet
+** @param s1 Premiere zone memoire
+** @param s2 Deuxieme zone memoire
+** @param n Nombre d'octets a comparer
+** @return int 0 si identiques, difference du premier octet different sinon
+** @details Retourne (s1[i] - s2[i]) au premier octet different
+** @note Compare en unsigned char pour eviter problemes de signe
+** @see ft_strncmp pour comparer des strings (s'arrete au '\0')
+** @example ft_memcmp("abc", "abd", 3) retourne -1 ('c' - 'd')
+*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*tmp1;

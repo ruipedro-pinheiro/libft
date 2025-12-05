@@ -12,6 +12,17 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Recherche la premiere occurrence d'un caractere dans une string
+** @param s String dans laquelle chercher
+** @param c Caractere a rechercher (cast en char)
+** @return char* Pointeur vers le caractere trouve, NULL si non trouve
+** @details Parcourt la string jusqu'au '\0' inclus
+** @note Si c == '\0', retourne un pointeur vers le '\0' final
+** @see ft_strrchr pour chercher la derniere occurrence
+** @see ft_memchr pour chercher dans une zone memoire de taille n
+** @example ft_strchr("hello", 'l') retourne pointeur vers premier 'l'
+*/
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)

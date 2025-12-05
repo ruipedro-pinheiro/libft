@@ -13,6 +13,18 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Extrait une sous-string d'une string
+** @param s String source
+** @param start Index de debut de la sous-string
+** @param len Longueur max de la sous-string
+** @return char* Nouvelle string extraite, NULL si echec
+** @details Si start >= len(s), retourne une string vide ""
+**          Si len depasse la fin de s, ajuste automatiquement
+** @note La string retournee doit etre free() par l'appelant
+** @warning Alloue de la memoire - penser a free()
+** @example ft_substr("hello", 1, 3) retourne "ell"
+*/
 char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 {
 	char			*ptr;

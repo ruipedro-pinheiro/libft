@@ -10,6 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** @brief Convertit une chaine de caracteres en entier
+** @param str Chaine de caracteres a convertir
+** @return int Valeur entiere de la chaine
+** @details Etapes de conversion:
+**          1. Skip les whitespaces (espace, tab, newline, etc.)
+**          2. Detecte le signe optionnel (+/-)
+**          3. Convertit les chiffres jusqu'au premier non-chiffre
+** @note Whitespaces reconnus: ' ', '\t', '\n', '\v', '\f', '\r' (ASCII 9-13)
+** @warning Ne gere pas l'overflow INT_MAX/INT_MIN - comportement indefini
+** @see ft_isdigit pour la detection des chiffres
+** @example ft_atoi("  -42abc") retourne -42
+** @example ft_atoi("   +123") retourne 123
+*/
 int	ft_atoi(const char *str)
 {
 	int	i;

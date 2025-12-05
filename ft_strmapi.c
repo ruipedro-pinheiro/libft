@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/*
+** @brief Applique une fonction a chaque char et cree une nouvelle string
+** @param s String source (non modifiee)
+** @param f Fonction a appliquer: char f(index, caractere)
+** @return char* Nouvelle string avec les caracteres transformes, NULL si echec
+** @details Alloue une nouvelle string et applique f a chaque char
+** @note La string retournee doit etre free() par l'appelant
+** @warning Alloue de la memoire - penser a free()
+** @see ft_striteri version in-place (modifie s directement)
+** @example ft_strmapi("abc", to_upper) pourrait retourner "ABC"
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*string;

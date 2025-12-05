@@ -13,6 +13,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** @brief Recherche une sous-string dans les n premiers caracteres
+** @param big String dans laquelle chercher
+** @param little Sous-string a trouver
+** @param len Nombre max de caracteres a parcourir dans big
+** @return char* Pointeur vers le debut de little dans big, NULL si non trouve
+** @details Si little est vide, retourne big
+** @note Recherche limitee aux len premiers caracteres de big
+** @see ft_strchr pour rechercher un seul caractere
+** @example ft_strnstr("hello world", "wor", 11) retourne pointeur vers "world"
+*/
 char	*ft_strnstr(const char *big, const char *little, int len)
 {
 	int	i;

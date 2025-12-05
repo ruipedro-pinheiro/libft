@@ -12,6 +12,16 @@
 
 #include <stdlib.h>
 
+/*
+** @brief Recherche la derniere occurrence d'un caractere dans une string
+** @param s String dans laquelle chercher
+** @param c Caractere a rechercher (cast en char)
+** @return char* Pointeur vers la derniere occurrence, NULL si non trouve
+** @details Parcourt toute la string et garde la derniere position trouvee
+** @note Si c == '\0', retourne un pointeur vers le '\0' final
+** @see ft_strchr pour chercher la premiere occurrence
+** @example ft_strrchr("hello", 'l') retourne pointeur vers le 2eme 'l'
+*/
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
