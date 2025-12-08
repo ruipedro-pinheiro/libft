@@ -10,6 +10,8 @@
 /*                                                                            */
 /******************************************************************************/
 
+#include "libft.h"
+
 /*
 ** @brief Convertit une chaîne de caractères en entier
 ** @param str Chaîne de caractères a convertir
