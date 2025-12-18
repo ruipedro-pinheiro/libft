@@ -1,33 +1,45 @@
-# Libft - Ma bibliothèque C personnalisée
+# Libft - My Custom C Library
 
-Premier projet du cursus de 42 Lausanne. Reconstruction de fonctions de la bibliothèque standard C.
+**Score:** 100/100
 
-## Description
+## About
 
-Libft est une bibliothèque C contenant des réimplémentations de fonctions standard (libc) ainsi que des fonctions utilitaires supplémentaires. Ce projet permet de comprendre en profondeur le fonctionnement de la gestion mémoire et des structures de données en C.
+Libft is the first project of the 42 cursus. The goal: rebuild the C standard library from scratch.
 
-## Fonctions implémentées
+This isn't just about reinventing the wheel — it's about understanding how the wheel works. By recoding functions like `strlen`, `memset`, or `calloc`, you gain a deep understanding of memory management, pointer arithmetic, and data structures. This library becomes the foundation for all future C projects at 42.
 
-### Partie 1 - Fonctions de la libc
-- Manipulation de chaînes : ft_strlen, ft_strcpy, ft_strdup, ft_strjoin, etc.
-- Manipulation de mémoire : ft_memset, ft_memcpy, ft_memmove, ft_calloc
-- Conversion : ft_atoi, ft_itoa
-- Tests de caractères : ft_isalpha, ft_isdigit, ft_isalnum, etc.
+## Implemented Functions
 
-### Partie 2 - Fonctions supplémentaires
-- ft_substr, ft_strtrim, ft_split
-- ft_strmapi, ft_striteri
-- ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd
+### Part 1 - Libc Re-implementation
 
-## Compilation
+These functions mimic the standard C library:
+
+- **String Manipulation:** `ft_strlen`, `ft_strcpy`, `ft_strdup`, `ft_strjoin`, `ft_strchr`, `ft_strncmp`, etc.
+- **Memory Manipulation:** `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_calloc`, `ft_bzero`
+- **Conversion:** `ft_atoi` (ASCII to Integer), `ft_itoa` (Integer to ASCII)
+- **Character Checks:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
+
+### Part 2 - Additional Utilities
+
+Functions that handle tasks often needed but missing from the standard library:
+
+- **String Utils:** `ft_substr`, `ft_strtrim`, `ft_split` (creates an array of strings from a delimiter)
+- **Functional Programming:** `ft_strmapi`, `ft_striteri` (applying functions to string characters)
+- **File Descriptor Output:** `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
+
+## Compilation & Usage
+
 ```bash
-make        # Compile la bibliothèque
-make clean  # Supprime les fichiers objets
-make fclean # Supprime tout
-make re     # Recompile tout
+make        # Compiles the library and generates libft.a
+make clean  # Removes object files (.o)
+make fclean # Removes object files and the library
+make re     # Re-compiles everything from scratch
 ```
 
-## Utilisation
+### How to use in your project
+
+Include the header and link the static library during compilation:
+
 ```c
 #include "libft.h"
 
@@ -40,7 +52,17 @@ int main(void)
 }
 ```
 
-## Projet 42
+```bash
+gcc main.c -L. -lft -o my_program
+```
 
-Projet réalisé dans le cadre du cursus de 42 Lausanne.
-Score : 100/100
+## What I Learned
+
+- **Memory Management:** Understanding `malloc` and `free` to prevent memory leaks
+- **Pointer Arithmetic:** Manipulating data directly via pointers
+- **Makefile:** Creating a solid build system
+- **Reading documentation:** Actually understanding what each function is supposed to do before coding it
+
+---
+
+*Project developed at 42 Lausanne*
