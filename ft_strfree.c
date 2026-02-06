@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 11:27:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2026/02/06 00:00:00 by rpinheir         ###   ########.fr       */
+/*   Created: 2026/02/04 12:49:26 by rpinheir          #+#    #+#             */
+/*   Updated: 2026/02/04 12:51:55 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	gnl_find_char(const char *s, int c)
+int	ft_strfree(char **str)
 {
 	int	i;
 
-	if (!s)
-		return (-1);
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (s[i] == (char)c)
-			return (i);
+		free(str[i]);
 		i++;
 	}
-	if ((char)c == '\0')
-		return (i);
-	return (-1);
+	free(str);
+	return (0);
 }
