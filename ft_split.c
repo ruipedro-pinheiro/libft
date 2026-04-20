@@ -118,6 +118,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
 	count = ft_count(s, c, 0);
@@ -135,6 +137,5 @@ char	**ft_split(char const *s, char c)
 			j++;
 		i++;
 	}
-	ptr[i] = NULL;
 	return (ptr);
 }
