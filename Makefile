@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3 -fPIC
 
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
