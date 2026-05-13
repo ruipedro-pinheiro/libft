@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:55:31 by rpinheir          #+#    #+#             */
-/*   Updated: 2026/02/04 15:55:31 by rpinheir         ###   ########.ch       */
+/*   Updated: 2026/05/13 14:40:36 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strnstr(const char *big, const char *little, int len);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *big, const char *little, int len);
+char		*ft_strjoin_char(char *s, char c);
 
 int			ft_putchar(char c);
 int			ft_putstr(char *s);
