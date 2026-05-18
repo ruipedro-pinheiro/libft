@@ -26,6 +26,7 @@ char		*get_next_line(int fd);
 char		*extract_line(char **stash, int len);
 char		*ft_strdup(const char *s);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin_char(char *s, char c);
 char		*ft_itoa(int chiffre);
 char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, unsigned int len);
