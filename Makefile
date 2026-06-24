@@ -48,7 +48,8 @@ SRC = ft_atoll.c \
       ft_tolower.c \
       ft_toupper.c \
       get_next_line.c \
-      get_next_line_utils.c
+      get_next_line_utils.c \
+	  ft_strapnd.c 
 
 OBJ = $(SRC:.c=.o)
 
