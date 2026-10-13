@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-/*
-** @brief Convertit une chaîne de caractères en entier
-** @param str Chaîne de caractères a convertir
-** @return int Valeur entière de la chaîne
-** @details Étapes de conversion:
-**          1. Skip les whitespaces (espace, tab, newline, etc.)
-**          2. Détecte le signe optionnel (+/-)
-**          3. Convertit les chiffres jusqu'au premier non-chiffre
-** @note Whitespaces reconnus: ' ', '\t', '\n', '\v', '\f', '\r' (ASCII 9-13)
-** @warning Ne gère pas l'overflow INT_MAX/INT_MIN - comportement indéfini
-** @see ft_isdigit pour la detection des chiffres
-** @example ft_atoi("  -42abc") retourne -42
-** @example ft_atoi("   +123") retourne 123
-*/
 long long	ft_atoll(const char *str, bool *overflow)
 {
 	long long	i;
