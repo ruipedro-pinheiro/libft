@@ -16,6 +16,8 @@ int	ft_strfree(char **str)
 {
 	int	i;
 
+	if(!str)
+        return (1); 
 	i = 0;
 	if (!str)
 		return (1);
